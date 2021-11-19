@@ -5,10 +5,29 @@
  */
 package ToDoApp;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Siddarath
  */
-public class ApplicationFrame {
+public class ApplicationFrame extends JFrame{
+    
+    private TitleHeading titleBar;
+    private ListOfTasks list;
+    private FooterButtonPanel buttonPanel;
+    
+    
+    // Constructor
+    ApplicationFrame()
+    {
+        this.setSize(450,700);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        
+        titleBar = new TitleHeading();
+        list = new ListOfTasks();
+        buttonPanel = new FooterButtonPanel();
+    }
     
 }
