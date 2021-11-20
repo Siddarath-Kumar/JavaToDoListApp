@@ -30,6 +30,7 @@ public class ApplicationFrame extends JFrame{
         buttonPanel = new FooterButtonPanel();
         
         this.add(titleBar, BorderLayout.NORTH);
+        this.add(buttonPanel,BorderLayout.SOUTH);
         
         this.setVisible(true);
     }
