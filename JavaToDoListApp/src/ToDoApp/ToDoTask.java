@@ -52,10 +52,22 @@ public class ToDoTask extends JPanel {
 
     }
     
+    public JButton getTaskDoneBtn()
+    {
+        return taskDoneBtn;
+    }
+    
     public void changeListIndex(int indexNumber)
     {
         this.taskIndex.setText(indexNumber + "");
         this.revalidate();
+    }
+    
+    public void changeTaskStatus()
+    {
+        this.setBackground(Color.green);
+        nameOfTask.setBackground(Color.green);
+        isTaskCompleted = true;
     }
     
 }
