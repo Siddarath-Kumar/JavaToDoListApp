@@ -5,10 +5,25 @@
  */
 package ToDoApp;
 
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Siddarath
  */
-public class ListOfTasks {
+public class ListOfTasks extends JPanel{
+    
+    ListOfTasks()
+    {
+       GridLayout tasksLayout = new GridLayout(10,1); // 10 rows and 1 column grid
+       tasksLayout.setVgap(5); // Vertical gap of 5 
+        
+       this.setLayout(tasksLayout);
+       
+        
+    }
+    
     
 }

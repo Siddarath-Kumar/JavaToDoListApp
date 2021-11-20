@@ -5,10 +5,54 @@
  */
 package ToDoApp;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Siddarath
  */
-public class ToDoTask {
+public class ToDoTask extends JPanel {
+    
+    private JLabel taskIndex;
+    private JTextField nameOfTask;
+    private JButton taskDoneBtn;
+    
+    private boolean isTaskCompleted;
+    
+    // Constructor
+    ToDoTask()
+    {
+        this.setPreferredSize(new Dimension(40,20));
+        this.setBackground(Color.red);
+    
+        this.setLayout(new BorderLayout());
+        
+        isTaskCompleted = false;
+        
+        taskIndex = new JLabel("");
+        taskIndex.setPreferredSize(new Dimension(20,20));
+        taskIndex.setHorizontalAlignment(JLabel.CENTER);
+        
+        nameOfTask = new JTextField("Enter task here...");
+        nameOfTask.setBorder(BorderFactory.createEmptyBorder());
+        nameOfTask.setBackground(Color.yellow);
+        
+        taskDoneBtn = new JButton("Done");
+        taskDoneBtn.setPreferredSize(new Dimension(40,20));
+        taskDoneBtn.setBorder(BorderFactory.createEmptyBorder());
+        taskDoneBtn.setBackground(Color.green);
+        
+        this.add(taskIndex, BorderLayout.WEST);
+        this.add(nameOfTask, BorderLayout.CENTER);
+        this.add(taskDoneBtn, BorderLayout.EAST);
+
+    }
     
 }
