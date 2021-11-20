@@ -39,4 +39,21 @@ public class ListOfTasks extends JPanel{
         }
     }
     
+    public void removeDoneTasks()
+    {
+
+        Component[] listItems = this.getComponents();
+        
+        for(int i = 0; i < listItems.length; i++)
+        {
+            if(listItems[i] instanceof ToDoTask && ((ToDoTask)listItems[i]).getTaskStatus() == true)
+            {
+               System.out.println("Removed completed tasks");
+               this.remove(listItems[i]);
+            }
+        }
+        
+        updateListIndex();
+    }
+    
 }

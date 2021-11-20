@@ -39,10 +39,6 @@ public class ApplicationFrame extends JFrame{
         
         addListeners();
         
-        
-        
-        
-        
         this.add(titleBar, BorderLayout.NORTH);
         this.add(list, BorderLayout.CENTER);
         this.add(buttonPanel,BorderLayout.SOUTH);
@@ -78,8 +74,11 @@ public class ApplicationFrame extends JFrame{
         {
             public void mousePressed(MouseEvent e)
             {
-               //list.removeDoneTasks;
-               //repaint();
+                
+                list.removeDoneTasks();
+                repaint();
+
+               
             }
         });
     }

@@ -70,4 +70,9 @@ public class ToDoTask extends JPanel {
         isTaskCompleted = true;
     }
     
+    public boolean getTaskStatus()
+    {
+        return isTaskCompleted;
+    }
+    
 }
