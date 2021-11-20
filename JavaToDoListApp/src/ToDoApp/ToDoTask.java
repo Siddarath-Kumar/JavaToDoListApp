@@ -30,8 +30,6 @@ public class ToDoTask extends JPanel {
     ToDoTask()
     {
         this.setPreferredSize(new Dimension(40,20));
-        this.setBackground(Color.red);
-    
         this.setLayout(new BorderLayout());
         
         isTaskCompleted = false;
@@ -47,7 +45,6 @@ public class ToDoTask extends JPanel {
         taskDoneBtn = new JButton("Done");
         taskDoneBtn.setPreferredSize(new Dimension(40,20));
         taskDoneBtn.setBorder(BorderFactory.createEmptyBorder());
-        taskDoneBtn.setBackground(Color.green);
         
         this.add(taskIndex, BorderLayout.WEST);
         this.add(nameOfTask, BorderLayout.CENTER);

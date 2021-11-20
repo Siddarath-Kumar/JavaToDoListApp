@@ -6,6 +6,9 @@
 package ToDoApp;
 
 import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -18,6 +21,8 @@ public class ApplicationFrame extends JFrame{
     private ListOfTasks list;
     private FooterButtonPanel buttonPanel;
     
+    private JButton addTasksBtn;
+    private JButton clearTasksBtn;
     
     // Constructor
     ApplicationFrame()
@@ -29,6 +34,15 @@ public class ApplicationFrame extends JFrame{
         list = new ListOfTasks();
         buttonPanel = new FooterButtonPanel();
         
+        addTasksBtn = buttonPanel.getAddTask();
+        clearTasksBtn = buttonPanel.getClearTask();
+        
+        addListeners();
+        
+        
+        
+        
+        
         this.add(titleBar, BorderLayout.NORTH);
         this.add(list, BorderLayout.CENTER);
         this.add(buttonPanel,BorderLayout.SOUTH);
@@ -36,4 +50,17 @@ public class ApplicationFrame extends JFrame{
         this.setVisible(true);
     }
     
+    public void addListeners()
+    {
+        addTasksBtn.addMouseListener(new MouseAdapter()
+        {
+            //@override
+            public void mousePressed(MouseEvent e)
+            {
+                ToDoTask task = new ToDoTask();
+                list.add(task);
+                revalidate();
+            }
+        });
+    }
 }
