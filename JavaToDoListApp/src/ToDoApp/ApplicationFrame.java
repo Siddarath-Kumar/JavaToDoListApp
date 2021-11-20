@@ -5,6 +5,7 @@
  */
 package ToDoApp;
 
+import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 /**
@@ -21,13 +22,16 @@ public class ApplicationFrame extends JFrame{
     // Constructor
     ApplicationFrame()
     {
-        this.setSize(450,700);
+        this.setSize(400,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
         
         titleBar = new TitleHeading();
         list = new ListOfTasks();
         buttonPanel = new FooterButtonPanel();
+        
+        this.add(titleBar, BorderLayout.NORTH);
+        
+        this.setVisible(true);
     }
     
 }
