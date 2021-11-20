@@ -6,6 +6,7 @@
 package ToDoApp;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 
@@ -25,5 +26,17 @@ public class ListOfTasks extends JPanel{
         
     }
     
+    public void updateListIndex()
+    {
+        Component[] listItems = this.getComponents();
+        
+        for(int i = 0; i < listItems.length; i++)
+        {
+            if(listItems[i] instanceof ToDoTask)
+            {
+                ((ToDoTask)listItems[i]).changeListIndex(i+1);
+            }
+        }
+    }
     
 }

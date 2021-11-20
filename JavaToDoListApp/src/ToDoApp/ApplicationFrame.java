@@ -59,6 +59,7 @@ public class ApplicationFrame extends JFrame{
             {
                 ToDoTask task = new ToDoTask();
                 list.add(task);
+                list.updateListIndex();
                 revalidate();
             }
         });

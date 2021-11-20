@@ -52,4 +52,10 @@ public class ToDoTask extends JPanel {
 
     }
     
+    public void changeListIndex(int indexNumber)
+    {
+        this.taskIndex.setText(indexNumber + "");
+        this.revalidate();
+    }
+    
 }
