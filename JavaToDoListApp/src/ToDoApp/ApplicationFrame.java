@@ -27,7 +27,7 @@ public class ApplicationFrame extends JFrame{
     // Constructor
     ApplicationFrame()
     {
-        this.setSize(400,700);
+        this.setSize(500,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         titleBar = new TitleHeading();
@@ -73,12 +73,9 @@ public class ApplicationFrame extends JFrame{
         clearTasksBtn.addMouseListener(new MouseAdapter()
         {
             public void mousePressed(MouseEvent e)
-            {
-                
+            {    
                 list.removeDoneTasks();
                 repaint();
-
-               
             }
         });
     }

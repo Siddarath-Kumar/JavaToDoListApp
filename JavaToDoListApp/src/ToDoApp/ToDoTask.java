@@ -8,6 +8,7 @@ package ToDoApp;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -36,9 +37,11 @@ public class ToDoTask extends JPanel {
         
         taskIndex = new JLabel("");
         taskIndex.setPreferredSize(new Dimension(20,20));
+        taskIndex.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         taskIndex.setHorizontalAlignment(JLabel.CENTER);
         
         nameOfTask = new JTextField("Enter task here...");
+        nameOfTask.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         nameOfTask.setBorder(BorderFactory.createEmptyBorder());
         nameOfTask.setBackground(Color.yellow);
         

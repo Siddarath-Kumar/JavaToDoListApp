@@ -27,7 +27,7 @@ public class TitleHeading extends JPanel {
         
         JLabel titleText = new JLabel("My To Do List");
         titleText.setPreferredSize(new Dimension(200,80));
-        titleText.setFont(new Font("Sans-serif", Font.BOLD, 20));
+        titleText.setFont(new Font("Sans-serif", Font.BOLD, 24));
         titleText.setHorizontalAlignment(JLabel.CENTER);
         
         this.add(titleText);
