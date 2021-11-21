@@ -6,6 +6,7 @@
 package ToDoApp;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -36,6 +37,12 @@ public class ApplicationFrame extends JFrame{
         
         addTasksBtn = buttonPanel.getAddTask();
         clearTasksBtn = buttonPanel.getClearTask();
+        
+        Color lightYellowBg = new Color(255,255,153);
+        
+        titleBar.setBackground(lightYellowBg);
+        list.setBackground(lightYellowBg);
+        buttonPanel.setBackground(lightYellowBg);
         
         addListeners();
         

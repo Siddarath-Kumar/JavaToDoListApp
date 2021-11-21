@@ -23,7 +23,7 @@ public class TitleHeading extends JPanel {
     TitleHeading()
     {
         this.setPreferredSize(new Dimension(400,80));
-        //this.setBackground(Color.green);
+        //this.setBackground(Color.orange);
         
         JLabel titleText = new JLabel("My To Do List");
         titleText.setPreferredSize(new Dimension(200,80));

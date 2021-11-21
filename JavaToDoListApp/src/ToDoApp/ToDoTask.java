@@ -30,8 +30,11 @@ public class ToDoTask extends JPanel {
     // Constructor
     ToDoTask()
     {
+        Color whiteBGtaskColor = new Color(255,255,255);
+        
         this.setPreferredSize(new Dimension(40,20));
         this.setLayout(new BorderLayout());
+        this.setBackground(whiteBGtaskColor);
         
         isTaskCompleted = false;
         
@@ -39,11 +42,12 @@ public class ToDoTask extends JPanel {
         taskIndex.setPreferredSize(new Dimension(20,20));
         taskIndex.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         taskIndex.setHorizontalAlignment(JLabel.CENTER);
+        taskIndex.setBackground(whiteBGtaskColor);
         
         nameOfTask = new JTextField("Enter task here...");
         nameOfTask.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         nameOfTask.setBorder(BorderFactory.createEmptyBorder());
-        nameOfTask.setBackground(Color.yellow);
+        nameOfTask.setBackground(whiteBGtaskColor);
         
         taskDoneBtn = new JButton("Done");
         taskDoneBtn.setPreferredSize(new Dimension(40,20));
@@ -68,8 +72,10 @@ public class ToDoTask extends JPanel {
     
     public void changeTaskStatus()
     {
-        this.setBackground(Color.green);
-        nameOfTask.setBackground(Color.green);
+        Color greenDoneBG = new Color(102,255,102); // light green background color
+        
+        this.setBackground(greenDoneBG);
+        nameOfTask.setBackground(greenDoneBG);
         isTaskCompleted = true;
     }
     
