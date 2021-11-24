@@ -50,6 +50,7 @@ public class ListOfTasks extends JPanel{
             {
                System.out.println("Removed completed tasks");
                this.remove(listItems[i]);
+               ApplicationFrame.tasksAdded--;
             }
         }
         

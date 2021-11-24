@@ -25,6 +25,8 @@ public class ApplicationFrame extends JFrame{
     private JButton addTasksBtn;
     private JButton clearTasksBtn;
     
+    public static int tasksAdded = 0;
+    
     // Constructor
     ApplicationFrame()
     {
@@ -60,22 +62,30 @@ public class ApplicationFrame extends JFrame{
             @Override
             public void mousePressed(MouseEvent e)
             {
-                ToDoTask task = new ToDoTask();
-                list.add(task);
-                list.updateListIndex();
-                
-                task.getTaskDoneBtn().addMouseListener(new MouseAdapter()
+                if (tasksAdded <10)
                 {
-                    @Override
-                    public void mousePressed(MouseEvent e)
+                   ToDoTask task = new ToDoTask();
+                    list.add(task);
+                    tasksAdded++;
+                    list.updateListIndex();
+
+                    task.getTaskDoneBtn().addMouseListener(new MouseAdapter()
                     {
-                        task.changeTaskStatus();
-                        revalidate();
-                    }
-                });
-                revalidate();
+                        @Override
+                        public void mousePressed(MouseEvent e)
+                        {
+                            task.changeTaskStatus();
+                            revalidate();
+                        }
+                    });
+                    revalidate(); 
+                }
+                else
+                {
+                    System.out.println("Cannot add more than 10 tasks");
+                }  
             }
-        });
+        }); 
         
         clearTasksBtn.addMouseListener(new MouseAdapter()
         {
