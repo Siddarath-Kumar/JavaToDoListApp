@@ -63,9 +63,10 @@ public class ApplicationFrame extends JFrame{
             @Override
             public void mousePressed(MouseEvent e)
             {
+                
                 if (tasksAdded <10)
                 {
-                   ToDoTask task = new ToDoTask();
+                    ToDoTask task = new ToDoTask();
                     list.add(task);
                     tasksAdded++;
                     list.updateListIndex();
@@ -75,9 +76,17 @@ public class ApplicationFrame extends JFrame{
                         @Override
                         public void mousePressed(MouseEvent e)
                         {
-                            task.changeTaskStatus();
-                            task.changeToTickedIcon();
-                            revalidate();
+                            if(task.isTickOff == true) // want to tick task
+                            {
+                                task.changeTaskStatus();
+                                task.changeToTickedIcon();
+                                revalidate();
+                            }
+                            else if(task.isTickOn == true) // want to untick task
+                            {
+                                task.changeToUntickedIcon();
+                                revalidate();
+                            }
                         }
                     });
                     revalidate(); 

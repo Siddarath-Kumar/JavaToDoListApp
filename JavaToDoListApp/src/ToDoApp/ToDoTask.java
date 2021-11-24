@@ -33,6 +33,10 @@ public class ToDoTask extends JPanel {
     
     private boolean isTaskCompleted;
     public static boolean clearableTasks;
+    
+    public boolean isTickOn;
+    public boolean isTickOff;
+    
     // Constructor
     ToDoTask()
     {
@@ -56,12 +60,7 @@ public class ToDoTask extends JPanel {
         nameOfTask.setBackground(whiteBGtaskColor);
         
         taskDoneBtn = new JButton();
-        
-        ImageIcon untickedBox = new ImageIcon(getClass().getResource("/Images/emptyCheckBox.png"));
-        taskDoneBtn.setIcon(untickedBox);
-        
-        
-        
+        changeToUntickedIcon();
         taskDoneBtn.setPreferredSize(new Dimension(40,20));
         taskDoneBtn.setBorder(BorderFactory.createEmptyBorder());
         
@@ -90,6 +89,10 @@ public class ToDoTask extends JPanel {
         nameOfTask.setBackground(greenDoneBG);
         isTaskCompleted = true;
         clearableTasks = true;
+        
+        // add boolean to see if the button is ticked 
+        // add if statement here and in the if statement change the bool variable
+        // then change the icon backed to the orginal by calling a method from here.
     }
     
     public boolean getTaskStatus()
@@ -101,5 +104,16 @@ public class ToDoTask extends JPanel {
     {
         ImageIcon tickedBox = new ImageIcon(getClass().getResource("/Images/tickedBox.png"));
         taskDoneBtn.setIcon(tickedBox);
+        isTickOn = true;
+        isTickOff = false;
+        
+    }
+    
+    public void changeToUntickedIcon()
+    {
+        ImageIcon untickedBox = new ImageIcon(getClass().getResource("/Images/emptyCheckBox.png"));
+        taskDoneBtn.setIcon(untickedBox);
+        isTickOn = false;
+        isTickOff = true;
     }
 }
