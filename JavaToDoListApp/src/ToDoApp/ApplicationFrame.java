@@ -11,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -100,6 +101,7 @@ public class ApplicationFrame extends JFrame{
                 else
                 {
                     // add pop gui box stating user cannot clear tasks as none are selected as done
+                    JOptionPane.showMessageDialog(new JFrame(), "Cannot clear tasks since there is no done tasks!", "Selection Warning", JOptionPane.WARNING_MESSAGE);
                     System.out.println("Cannot clear tasks since there is no done tasks!");
                 }
                 
