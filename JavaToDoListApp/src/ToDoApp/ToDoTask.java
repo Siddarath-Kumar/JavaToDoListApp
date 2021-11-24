@@ -26,7 +26,7 @@ public class ToDoTask extends JPanel {
     private JButton taskDoneBtn;
     
     private boolean isTaskCompleted;
-    
+    public static boolean clearableTasks;
     // Constructor
     ToDoTask()
     {
@@ -77,6 +77,7 @@ public class ToDoTask extends JPanel {
         this.setBackground(greenDoneBG);
         nameOfTask.setBackground(greenDoneBG);
         isTaskCompleted = true;
+        clearableTasks = true;
     }
     
     public boolean getTaskStatus()

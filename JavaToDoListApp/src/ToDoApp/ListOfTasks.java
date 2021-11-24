@@ -55,6 +55,7 @@ public class ListOfTasks extends JPanel{
         }
         
         updateListIndex();
+        ToDoTask.clearableTasks = false;
     }
     
 }

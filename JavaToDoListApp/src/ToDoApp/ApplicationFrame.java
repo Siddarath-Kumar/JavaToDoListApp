@@ -90,9 +90,19 @@ public class ApplicationFrame extends JFrame{
         clearTasksBtn.addMouseListener(new MouseAdapter()
         {
             public void mousePressed(MouseEvent e)
-            {    
-                list.removeDoneTasks();
-                repaint();
+            {   
+                if (ToDoTask.clearableTasks == true)
+                {
+                    System.out.println("Tasks can be cleared!");
+                    list.removeDoneTasks();
+                    repaint(); 
+                }
+                else
+                {
+                    // add pop gui box stating user cannot clear tasks as none are selected as done
+                    System.out.println("Cannot clear tasks since there is no done tasks!");
+                }
+                
             }
         });
     }
