@@ -76,6 +76,7 @@ public class ApplicationFrame extends JFrame{
                         public void mousePressed(MouseEvent e)
                         {
                             task.changeTaskStatus();
+                            task.changeToTickedIcon();
                             revalidate();
                         }
                     });

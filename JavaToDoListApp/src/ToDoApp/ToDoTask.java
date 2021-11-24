@@ -9,7 +9,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,7 +55,13 @@ public class ToDoTask extends JPanel {
         nameOfTask.setBorder(BorderFactory.createEmptyBorder());
         nameOfTask.setBackground(whiteBGtaskColor);
         
-        taskDoneBtn = new JButton("Done");
+        taskDoneBtn = new JButton();
+        
+        ImageIcon untickedBox = new ImageIcon(getClass().getResource("/Images/emptyCheckBox.png"));
+        taskDoneBtn.setIcon(untickedBox);
+        
+        
+        
         taskDoneBtn.setPreferredSize(new Dimension(40,20));
         taskDoneBtn.setBorder(BorderFactory.createEmptyBorder());
         
@@ -85,4 +97,9 @@ public class ToDoTask extends JPanel {
         return isTaskCompleted;
     }
     
+    public void changeToTickedIcon()
+    {
+        ImageIcon tickedBox = new ImageIcon(getClass().getResource("/Images/tickedBox.png"));
+        taskDoneBtn.setIcon(tickedBox);
+    }
 }
