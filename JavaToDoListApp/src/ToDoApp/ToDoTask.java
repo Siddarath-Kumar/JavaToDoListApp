@@ -37,11 +37,11 @@ public class ToDoTask extends JPanel {
     public boolean isTickOn;
     public boolean isTickOff;
     
+    Color whiteBGtaskColor = new Color(255,255,255);
+    
     // Constructor
     ToDoTask()
     {
-        Color whiteBGtaskColor = new Color(255,255,255);
-        
         this.setPreferredSize(new Dimension(40,20));
         this.setLayout(new BorderLayout());
         this.setBackground(whiteBGtaskColor);
@@ -81,7 +81,7 @@ public class ToDoTask extends JPanel {
         this.revalidate();
     }
     
-    public void changeTaskStatus()
+    public void changeTaskToComplete()
     {
         Color greenDoneBG = new Color(102,255,102); // light green background color
         
@@ -89,10 +89,14 @@ public class ToDoTask extends JPanel {
         nameOfTask.setBackground(greenDoneBG);
         isTaskCompleted = true;
         clearableTasks = true;
-        
-        // add boolean to see if the button is ticked 
-        // add if statement here and in the if statement change the bool variable
-        // then change the icon backed to the orginal by calling a method from here.
+    }
+    
+    public void changeTaskToIncomplete()
+    {
+        this.setBackground(whiteBGtaskColor);
+        nameOfTask.setBackground(whiteBGtaskColor);
+        isTaskCompleted = false;
+        //clearableTasks = false;
     }
     
     public boolean getTaskStatus()

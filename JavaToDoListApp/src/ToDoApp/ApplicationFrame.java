@@ -78,14 +78,15 @@ public class ApplicationFrame extends JFrame{
                         {
                             if(task.isTickOff == true) // want to tick task
                             {
-                                task.changeTaskStatus();
+                                task.changeTaskToComplete();
                                 task.changeToTickedIcon();
-                                revalidate();
+                                //revalidate();
                             }
                             else if(task.isTickOn == true) // want to untick task
                             {
                                 task.changeToUntickedIcon();
-                                revalidate();
+                                task.changeTaskToIncomplete();
+                                //revalidate();
                             }
                         }
                     });
