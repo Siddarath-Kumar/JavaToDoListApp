@@ -11,6 +11,7 @@ import java.awt.Font;
 import javafx.scene.layout.Border;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -22,23 +23,28 @@ public class FooterButtonPanel extends JPanel{
     
     private JButton addTaskBtn;
     private JButton clearTaskBtn;
-    
-    //Border emptyBorder = BorderFactory.createEmptyBorder();
-    
+        
     // Constructor
     FooterButtonPanel()
     {
-        this.setPreferredSize(new Dimension(400,60));
+        this.setPreferredSize(new Dimension(400,100));
         this.setBackground(Color.LIGHT_GRAY);
         
-        addTaskBtn = new JButton("Add Task");
-        //addTaskBtn.setBorder(emptyBorder);
+        ImageIcon addTasksIcon = new ImageIcon(getClass().getResource("/Images/addTaskIcon.png"));
+        ImageIcon removeTasksIcon = new ImageIcon(getClass().getResource("/Images/removeTaskIcon.png"));
+
+        addTaskBtn = new JButton("Add Task", addTasksIcon);
         addTaskBtn.setFont(new Font("Sans-serif", Font.PLAIN, 20));
+        addTaskBtn.setPreferredSize(new Dimension(170,48));
+        addTaskBtn.setBackground(Color.orange);
         
-        clearTaskBtn = new JButton("Clear Done Tasks");
-        //addTaskBtn.setBorder(emptyBorder);
+        clearTaskBtn = new JButton("Clear Tasks", removeTasksIcon);
         clearTaskBtn.setFont(new Font("Sans-serif", Font.PLAIN, 20));
-        
+        clearTaskBtn.setPreferredSize(new Dimension(200, 48));
+        clearTaskBtn.setBackground(Color.PINK);
+
+
+        this.add(Box.createVerticalStrut(90));
         this.add(addTaskBtn);
         this.add(Box.createHorizontalStrut(20));
         this.add(clearTaskBtn);
