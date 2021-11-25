@@ -88,7 +88,7 @@ public class ToDoTask extends JPanel {
         this.setBackground(greenDoneBG);
         nameOfTask.setBackground(greenDoneBG);
         isTaskCompleted = true;
-        clearableTasks = true;
+        //clearableTasks = true;
     }
     
     public void changeTaskToIncomplete()

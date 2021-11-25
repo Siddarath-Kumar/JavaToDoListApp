@@ -103,6 +103,8 @@ public class ApplicationFrame extends JFrame{
         {
             public void mousePressed(MouseEvent e)
             {   
+                list.checkForDoneTasks(); // call method which will go through to check if there is any tasks which can be cleared
+                
                 if (ToDoTask.clearableTasks == true)
                 {
                     System.out.println("Tasks can be cleared!");
@@ -116,6 +118,7 @@ public class ApplicationFrame extends JFrame{
                     System.out.println("Cannot clear tasks since there is no done tasks!");
                 }
                 
+                ToDoTask.clearableTasks = false; // After clearing done tasks if any set clearableTasks boolean back to false            
             }
         });
     }
