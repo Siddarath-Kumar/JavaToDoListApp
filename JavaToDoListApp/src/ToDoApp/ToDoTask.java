@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 /**
  *
@@ -54,7 +55,7 @@ public class ToDoTask extends JPanel {
         taskIndex.setHorizontalAlignment(JLabel.CENTER);
         taskIndex.setBackground(whiteBGtaskColor);
         
-        nameOfTask = new JTextField("Enter task here...");
+        nameOfTask = new JTextField(" Enter task here...");
         nameOfTask.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         nameOfTask.setBorder(BorderFactory.createEmptyBorder());
         nameOfTask.setBackground(whiteBGtaskColor);
@@ -108,6 +109,7 @@ public class ToDoTask extends JPanel {
     {
         ImageIcon tickedBox = new ImageIcon(getClass().getResource("/Images/tickedBox.png"));
         taskDoneBtn.setIcon(tickedBox);
+        taskDoneBtn.setBackground(Color.GREEN);
         isTickOn = true;
         isTickOff = false;
         
@@ -117,6 +119,7 @@ public class ToDoTask extends JPanel {
     {
         ImageIcon untickedBox = new ImageIcon(getClass().getResource("/Images/emptyCheckBox.png"));
         taskDoneBtn.setIcon(untickedBox);
+        taskDoneBtn.setBackground(UIManager.getColor("Button.background")); // Default background color of button
         isTickOn = false;
         isTickOff = true;
     }
