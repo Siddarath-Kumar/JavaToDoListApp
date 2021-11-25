@@ -94,6 +94,7 @@ public class ApplicationFrame extends JFrame{
                 }
                 else
                 {
+                    JOptionPane.showMessageDialog(new JFrame(), "Cannot add more than 10 tasks at a time!", "Selection Warning", JOptionPane.ERROR_MESSAGE);
                     System.out.println("Cannot add more than 10 tasks");
                 }  
             }
