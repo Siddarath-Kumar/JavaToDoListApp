@@ -34,12 +34,12 @@ public class FooterButtonPanel extends JPanel{
         ImageIcon removeTasksIcon = new ImageIcon(getClass().getResource("/Images/removeTaskIcon.png"));
 
         addTaskBtn = new JButton("Add Task", addTasksIcon);
-        addTaskBtn.setFont(new Font("Sans-serif", Font.PLAIN, 20));
+        addTaskBtn.setFont(new Font("Sans Serif", Font.BOLD, 18));
         addTaskBtn.setPreferredSize(new Dimension(170,48));
         addTaskBtn.setBackground(Color.orange);
         
         clearTaskBtn = new JButton("Clear Tasks", removeTasksIcon);
-        clearTaskBtn.setFont(new Font("Sans-serif", Font.PLAIN, 20));
+        clearTaskBtn.setFont(new Font("Sans Serif", Font.BOLD, 18));
         clearTaskBtn.setPreferredSize(new Dimension(200, 48));
         clearTaskBtn.setBackground(Color.PINK);
 
