@@ -109,8 +109,19 @@ public class ApplicationFrame extends JFrame{
                 if (ToDoTask.clearableTasks == true)
                 {
                     System.out.println("Tasks can be cleared!");
-                    list.removeDoneTasks();
-                    repaint(); 
+                    
+                    int userConfirmation = JOptionPane.showConfirmDialog(new JFrame(), "Are you sure you want to remove these tasks?");
+                    
+                    if (userConfirmation == JOptionPane.YES_OPTION)
+                    {
+                        System.out.println("As confirmed by the user, the clearable tasks will be removed");
+                        list.removeDoneTasks();
+                        repaint(); 
+                    }
+                    else
+                    {
+                        System.out.println("The user has selected no, the tasks will not be deleted!");
+                    }  
                 }
                 else
                 {
