@@ -5,6 +5,8 @@
  */
 package ToDoApp;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author Siddarath
@@ -14,8 +16,12 @@ public class JavaToDoListApp {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         // TODO code application logic here
+        
+        
+        String nimbusTheme = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
+        UIManager.setLookAndFeel(nimbusTheme);
         
         // Make a new app frame
         new ApplicationFrame();
