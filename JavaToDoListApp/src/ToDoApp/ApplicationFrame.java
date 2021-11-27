@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -52,6 +53,8 @@ public class ApplicationFrame extends JFrame{
         this.add(titleBar, BorderLayout.NORTH);
         this.add(list, BorderLayout.CENTER);
         this.add(buttonPanel,BorderLayout.SOUTH);
+        
+        setIconImage(new ImageIcon(getClass().getResource("/Images/checklistWindowLogo.png")).getImage());
         
         this.setVisible(true);
     }
