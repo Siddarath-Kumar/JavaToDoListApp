@@ -43,6 +43,8 @@ public class FooterButtonPanel extends JPanel{
         clearTaskBtn.setPreferredSize(new Dimension(200, 48));
         clearTaskBtn.setBackground(Color.PINK);
 
+        addTaskBtn.setToolTipText("Click this button to add a task to the list");
+        clearTaskBtn.setToolTipText("Click this button to remove all completed tasks");
 
         this.add(Box.createVerticalStrut(90));
         this.add(addTaskBtn);

@@ -64,6 +64,7 @@ public class ToDoTask extends JPanel {
         changeToUntickedIcon();
         taskDoneBtn.setPreferredSize(new Dimension(40,20));
         taskDoneBtn.setBorder(BorderFactory.createEmptyBorder());
+        taskDoneBtn.setToolTipText("Click this button to tick/untick in order to indicate the status of the task");
         
         this.add(taskIndex, BorderLayout.WEST);
         this.add(nameOfTask, BorderLayout.CENTER);
