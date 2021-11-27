@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -28,6 +29,9 @@ public class TitleHeading extends JPanel {
     SimpleDateFormat timeFormat;
     SimpleDateFormat dayFormat;
     SimpleDateFormat dateFormat;
+    
+    JLabel titleText;
+    JLabel mainDateTexts;
     JLabel timeLabel;
     JLabel dayLabel;
     JLabel dateLabel;
@@ -38,47 +42,36 @@ public class TitleHeading extends JPanel {
     // Constructor
     TitleHeading()
     {
-        this.setPreferredSize(new Dimension(400,100));
+        this.setPreferredSize(new Dimension(400,150));
         //this.setBackground(Color.orange);
         
         ImageIcon titleLogo = new ImageIcon(getClass().getResource("/Images/appLogo.png"));
 
         
-        JLabel titleText = new JLabel();
+        titleText = new JLabel();
+        titleText.setPreferredSize(new Dimension(400,100));
         titleText.setIcon(titleLogo);
-        
-        JLabel clock = new JLabel("Time, Date will go here");
-        
+        titleText.setHorizontalAlignment(JLabel.CENTER);
+
         timeFormat = new SimpleDateFormat("hh:mm:ss a"); // set format of time 
         dayFormat = new SimpleDateFormat("EEEE"); // set day of the week using the "E" format specifier
         dateFormat = new SimpleDateFormat("dd MMMMM, yyyy"); // set day of the week using the "E" format specifier
 
         
         timeLabel = new JLabel(); 
-        dayLabel = new JLabel(); 
+        timeLabel.setFont(new Font("Verdana", Font.BOLD, 16));
+        
+        
+        dayLabel = new JLabel();
+        dayLabel.setFont(new Font("Verdana", Font.BOLD, 16));
+
+        
         dateLabel = new JLabel(); 
+        dateLabel.setFont(new Font("Verdana", Font.BOLD, 16));
 
-        /*currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-        timeLabel.setText(currentTime);
-        
-        currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-        dayLabel.setText(currentDay);
-        
-        currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-        dateLabel.setText(currentDate);*/
-        
-        //titleText.setHorizontalAlignment(JLabel.CENTER);
-
-        /*titleText.setPreferredSize(new Dimension(200,80));
-        titleText.setFont(new Font("Sans-serif", Font.BOLD, 24));
-        titleText.setHorizontalAlignment(JLabel.CENTER);
-        
-        Font font = titleText.getFont();
-        Map attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        titleText.setFont(font.deriveFont(attributes));*/
         
         this.add(titleText);
+        //this.add(Box.createHorizontalStrut(100));
         this.add(timeLabel);
         this.add(dayLabel);
         this.add(dateLabel);
@@ -98,10 +91,10 @@ public class TitleHeading extends JPanel {
                     
 
                     currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-                    timeLabel.setText(currentTime);
+                    timeLabel.setText(currentTime + " ");
 
                     currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-                    dayLabel.setText(currentDay);
+                    dayLabel.setText("Date: " +currentDay);
 
                     currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
                     dateLabel.setText(currentDate);
