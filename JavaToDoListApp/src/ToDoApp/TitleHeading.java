@@ -9,7 +9,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,7 +24,16 @@ import javax.swing.JPanel;
  */
 public class TitleHeading extends JPanel {
     
-    //JLabel titleText;
+    Calendar calendar;
+    SimpleDateFormat timeFormat;
+    SimpleDateFormat dayFormat;
+    SimpleDateFormat dateFormat;
+    JLabel timeLabel;
+    JLabel dayLabel;
+    JLabel dateLabel;
+    String currentTime;
+    String currentDay;
+    String currentDate;
     
     // Constructor
     TitleHeading()
@@ -36,6 +49,24 @@ public class TitleHeading extends JPanel {
         
         JLabel clock = new JLabel("Time, Date will go here");
         
+        timeFormat = new SimpleDateFormat("hh:mm:ss a"); // set format of time 
+        dayFormat = new SimpleDateFormat("EEEE"); // set day of the week using the "E" format specifier
+        dateFormat = new SimpleDateFormat("dd MMMMM, yyyy"); // set day of the week using the "E" format specifier
+
+        
+        timeLabel = new JLabel(); 
+        dayLabel = new JLabel(); 
+        dateLabel = new JLabel(); 
+
+        currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+        timeLabel.setText(currentTime);
+        
+        currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+        dayLabel.setText(currentDay);
+        
+        currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+        dateLabel.setText(currentDate);
+        
         //titleText.setHorizontalAlignment(JLabel.CENTER);
 
         /*titleText.setPreferredSize(new Dimension(200,80));
@@ -48,8 +79,32 @@ public class TitleHeading extends JPanel {
         titleText.setFont(font.deriveFont(attributes));*/
         
         this.add(titleText);
-        this.add(clock);
+        this.add(timeLabel);
+        this.add(dayLabel);
+        this.add(dateLabel);
+        //this.setVisible(true);
+        //setTime();
+        
 
+    }
+    
+    public void setTime()
+    {
+        while(true)
+        {
+            System.out.println("reachable settime");
+            currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+            timeLabel.setText(currentTime);
+                
+                
+            try {
+                
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+              
+                ex.printStackTrace();
+            }
+        }
     }
     
 }
