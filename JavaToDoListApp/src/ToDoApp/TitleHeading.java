@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
@@ -24,7 +25,6 @@ import javax.swing.JPanel;
  */
 public class TitleHeading extends JPanel {
     
-    Calendar calendar;
     SimpleDateFormat timeFormat;
     SimpleDateFormat dayFormat;
     SimpleDateFormat dateFormat;
@@ -58,14 +58,14 @@ public class TitleHeading extends JPanel {
         dayLabel = new JLabel(); 
         dateLabel = new JLabel(); 
 
-        currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+        /*currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
         timeLabel.setText(currentTime);
         
         currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
         dayLabel.setText(currentDay);
         
         currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
-        dateLabel.setText(currentDate);
+        dateLabel.setText(currentDate);*/
         
         //titleText.setHorizontalAlignment(JLabel.CENTER);
 
@@ -82,29 +82,66 @@ public class TitleHeading extends JPanel {
         this.add(timeLabel);
         this.add(dayLabel);
         this.add(dateLabel);
+        
+        
         //this.setVisible(true);
-        //setTime();
+        setTime();
         
 
     }
     
     public void setTime()
     {
-        while(true)
-        {
-            System.out.println("reachable settime");
+        Thread clock = new Thread(){
+            public void run(){
+                while (true) {
+                    
+
+                    currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+                    timeLabel.setText(currentTime);
+
+                    currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+                    dayLabel.setText(currentDay);
+
+                    currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+                    dateLabel.setText(currentDate);
+
+                    try {
+
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+
+                        ex.printStackTrace();
+                    }
+                } 
+            }
+        };
+        
+        clock.start();
+        
+    }
+    
+    /*public void setTime()
+    {
+        while (true) {
+
+            System.out.println("Reachable and gui should be shown");
             currentTime = timeFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
             timeLabel.setText(currentTime);
-                
-                
+
+            currentDay = dayFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+            dayLabel.setText(currentDay);
+
+            currentDate = dateFormat.format(Calendar.getInstance().getTime()); // get current time and store it in string variable in time format
+            dateLabel.setText(currentDate);
+
             try {
-                
+
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-              
+
                 ex.printStackTrace();
             }
         }
-    }
-    
+    }*/
 }
