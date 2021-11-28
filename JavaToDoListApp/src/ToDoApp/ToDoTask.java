@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +22,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -50,15 +52,17 @@ public class ToDoTask extends JPanel {
         isTaskCompleted = false;
         
         taskIndex = new JLabel("");
-        taskIndex.setPreferredSize(new Dimension(20,20));
+        taskIndex.setPreferredSize(new Dimension(30,20));
         taskIndex.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         taskIndex.setHorizontalAlignment(JLabel.CENTER);
         taskIndex.setBackground(whiteBGtaskColor);
-        
+        taskIndex.setBorder(new LineBorder(Color.RED, 1));
+
         nameOfTask = new JTextField(" Enter task here...");
         nameOfTask.setFont(new Font("Sans-serif", Font.PLAIN, 18));
         nameOfTask.setBorder(BorderFactory.createEmptyBorder());
         nameOfTask.setBackground(whiteBGtaskColor);
+        nameOfTask.setBorder(new LineBorder(Color.BLACK, 1));
         
         taskDoneBtn = new JButton();
         changeToUntickedIcon();

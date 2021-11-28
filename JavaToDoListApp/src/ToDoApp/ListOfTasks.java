@@ -19,7 +19,7 @@ public class ListOfTasks extends JPanel{
     ListOfTasks()
     {
        GridLayout tasksLayout = new GridLayout(10,1); // 10 rows and 1 column grid
-       tasksLayout.setVgap(5); // Vertical gap of 5 
+       tasksLayout.setVgap(7); // Vertical gap of 5 
         
        this.setLayout(tasksLayout);
        
