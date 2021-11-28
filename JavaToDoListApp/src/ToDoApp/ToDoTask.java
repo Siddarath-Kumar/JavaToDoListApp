@@ -124,7 +124,8 @@ public class ToDoTask extends JPanel {
     {
         ImageIcon untickedBox = new ImageIcon(getClass().getResource("/Images/emptyCheckBox.png"));
         taskDoneBtn.setIcon(untickedBox);
-        taskDoneBtn.setBackground(UIManager.getColor("Button.background")); // Default background color of button
+        taskDoneBtn.setBackground(Color.lightGray);
+        //taskDoneBtn.setBackground(UIManager.getColor("Button.background")); // Default background color of button
         isTickOn = false;
         isTickOff = true;
     }
